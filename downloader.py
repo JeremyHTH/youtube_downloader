@@ -118,8 +118,9 @@ class DownloaderGUI(QMainWindow):
                 self.status.showMessage('downloading Audio')
                 audio[0].download('audio')
                 self.status.showMessage('done. Idle')
-        except:
-            QMessageBox.question(self,'Error','Please type in correct url')
+        except Exception as e:
+            print(e)
+            QMessageBox.question(self,'Error',str(e))
 
 
     def _clear(self):
